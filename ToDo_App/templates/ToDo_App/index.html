@@ -1,0 +1,17 @@
+{% extends "ToDo_App/base.html" %}
+{%block content%}
+    <h2>ToDo List</h2>
+
+    {% for list in lists%}
+        <div>
+            <ul>
+                <li>{{list.title}}</li>
+                <p>{{list.task}}</p>
+                Created on {{list.date_created}}
+            </ul> 
+        </div>
+    {% endfor %}
+    <a href="{% url 'ToDo_App:new_list' %}">Add a new list</a>
+{%endblock content%}
+
+ 

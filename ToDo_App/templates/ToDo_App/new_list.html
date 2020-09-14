@@ -1,0 +1,9 @@
+{% extends "ToDo_App/base.html" %}
+{% block content %}
+    <h4>Add a new list:</h4>
+    <form action="{% url 'ToDo_App:new_list' %}" method="POST">
+        {% csrf_token %} 
+        {{form.as_p}}
+        <input type="submit" name="Add List">
+    </form>
+{% endblock content %}
